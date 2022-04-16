@@ -1,0 +1,77 @@
+#load {
+  width: 150px;
+  animation: loading 3s linear infinite;
+}
+#load #loading-inner {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 300;
+  stroke-width: 10;
+  stroke-miterlimit: 10;
+  stroke-linecap: round;
+  animation: loading-circle 2s linear infinite;
+  stroke: #fff;
+  fill: transparent;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes loading-circle {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -600;
+  }
+}
+
+.alert {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.alert.alert-success {
+  background-color: rgba(227, 253, 235, 1);
+  border-color: rgba(38, 179, 3, 1);
+  color: rgba(60, 118, 61, 1);
+}
+
+.alert.alert-info {
+  background-color: rgba(217, 237, 247, 1);
+  color: rgba(49, 112, 143, 1);
+  border-color: rgba(126, 182, 193, 1);
+}
+
+
+.alert.alert-warning {
+  background-color: rgba(252, 248, 227, 1);
+  border-color: rgba(177, 161, 129, 1);
+  color: rgba(138, 109, 59, 1);
+}
+
+.alert.alert-danger {
+  background-color: rgba(248, 215, 218, 1);
+  border-color: rgba(220, 53, 69, 1);
+  color: rgba(114, 28, 36,1);
+}
+
+.alertify-logs {
+    position: fixed;
+    z-index: 5000;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+}
+.invalid-feedback{
+    color: #f00;
+    font-size: 12px;
+}
