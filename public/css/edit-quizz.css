@@ -1,0 +1,300 @@
+
+
+.theme-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-content{
+    height: auto;
+    width:48%;
+    padding-top:0;
+    margin-bottom: 2rem;
+}
+
+
+.right-content-popup{
+    width:99%;
+    min-height:33rem;
+    display: flex;
+    margin: 1rem 0.5%;
+    /* overflow: auto; */
+}
+
+.right-content-web{
+    width:40%;
+    /* padding:0 30%; */
+    /* background-color: #f9f9f9; */
+    border-radius: 10px;
+    /* margin: 1rem 0.5%; */
+    margin: 1rem 30%;
+
+    /* box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px, rgb(0 0 0 / 19%) 0px 6px 20px 0px; */
+}
+
+.right-content h5{
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 2rem;
+}
+
+.right-content .content{
+    width: 100%;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.reload-quizz{
+    width:100%;
+    height:2rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #5D5FEF;
+}
+
+.reload-quizz span{
+    cursor: pointer;
+}
+
+.right-content .content .showpreimg{
+    width: 100%;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 2rem;
+    height: 26rem;
+}
+
+.right-content .content p{
+    width: 100%;
+    padding-bottom: 1.5rem;
+    font-family: 'Poppins';
+}
+
+
+.right-content button, .right-content .content a{
+    width: 100%;
+    padding: 1rem 1rem;
+    color: white;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-decoration: none;
+    border: none;
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+
+}
+
+.right-content .input-field{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #dbdbdb;
+    padding: 2rem 1rem!important;
+    /* color: white;
+    border-radius: 5px;
+    margin-top: 1rem;
+    text-decoration: none;
+    border: none; */
+    font-family: 'Poppins';
+    font-size: 1.5rem;
+
+}
+
+.right-content button{
+    background: #5D5FEF;
+}
+
+
+.right-content .a-link{
+    width: 100%!important;
+    background: #5D5FEF;
+    outline: none;
+}
+
+
+.right-content .skippable{
+    background: #DFDFFC;
+    color: #000;
+    margin-bottom: 0.5rem;
+}
+
+.timer-input input{
+    padding: 0!important;
+    margin-right: 1.5rem;
+    font-size: 1.2rem;
+}
+
+
+.theme-settings{
+    width: 48%;
+}
+
+.each-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.each-header .p{
+    font-size: 1.5rem;
+    font-family: 'Poppins';
+    font-weight: bold;
+} 
+
+.settings-label{
+    font-weight: normal;
+    font-family: 'Poppins';
+}
+
+.each-line-settings{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.each-grp{
+    margin-top: 2rem;
+
+}
+
+
+
+.table-area{
+    width: 100%;
+    margin-bottom: 0.5rem;
+    background-color: #fff;
+}
+
+.lead-table{
+    border: 1px solid #dee2e6;
+    border-top: none;
+}
+
+.lead-actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.main-actions button, .lead-single-action{
+    font-size: 0.75rem;
+}
+
+.main-actions button:hover, .lead-single-action:hover{
+    color: #fff;
+    background-color: #5D5FEF;
+}
+
+.lead-name{
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.page-item-disabled:hover{
+    cursor: not-allowed;
+}
+
+.filter-lead{
+    width: 100%;
+    border: none;
+    padding: 0.5rem 0;
+}
+
+.lead-intro{
+    padding: 1rem;
+}
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+
+.lead-filter-option{
+    padding: 1rem;
+}
+
+.each-filter-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.list-add-form{
+    padding: 2rem 10%;
+}
+
+.list-add-form select{
+    background-color: #fff;
+    outline: none;
+}

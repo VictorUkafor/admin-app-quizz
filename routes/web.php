@@ -49,6 +49,23 @@ Route::middleware(['auth'])->group(function (){
 	Route::post('/user/settings', 'UserController@updateSettings')->name('user.settings.edit');
 	Route::post('/user/settings/password', 'UserController@editPassword')->name('user.settings.password.edit');
 
+	Route::get('/admin/create-template', 'TemplateController@index')->name('admin.create-template');
+	Route::get('/admin/templates', 'TemplateController@manageTemplates')->name('admin.templates');
+
+	// Route::get('/admin/users/subscriptions/{userId}', 'AdminController@subscriptions')->name('admin.users.subscriptions');
+	// Route::post('/admin/users/subscription/add', 'AdminController@addSubscriptions')->name('admin.users.subscriptions.add');
+	// Route::get('/admin/users/subscriptions/delete/{userId}/{queryId}', 'AdminController@deleteSubscription')->name('admin.users.subscriptions.delete');
+
+	Route::prefix('api')->group(function() {
+
+		Route::post('/templates', 'TemplateController@create');
+		Route::get('/templates', 'TemplateController@get');
+		Route::get('/templates/{uuid}', 'TemplateController@show');
+		Route::put('/templates/{uuid}', 'TemplateController@edit');
+		Route::delete('/templates/{uid}', 'TemplateController@delete');
+
+	});
+
 });
 
 

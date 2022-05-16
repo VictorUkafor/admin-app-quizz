@@ -11,6 +11,9 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" 
+    rel="stylesheet">
 
     <!-- Bootstrap Core Css -->
     <link href="{{ asset('site-assets/plugins/bootstrap/css/bootstrap.css') }}" rel="stylesheet">
@@ -44,6 +47,14 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{ asset('site-assets/css/themes/all-themes.css')}}" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="{{ asset('css/edit-quizz.css')}}" rel="stylesheet">
+
+
 </head>
 
 <body class="theme-blue">
@@ -114,6 +125,13 @@
                         <a href="{{ route('admin.dashboard') }}" >
                             <i class="material-icons">home</i>
                             <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="header">Themes</li>
+                    <li class="{{ ($page == "create-template")? "active":"" }}">
+                        <a href="{{ route('admin.create-template') }}">
+                            <i class="material-icons">people_outline</i>
+                            <span>Create Theme</span>
                         </a>
                     </li>
                     <li class="header">User management</li>
@@ -315,7 +333,7 @@
         <!-- #END# Right Sidebar -->
     </section>
 
-    @yield('content')
+        @yield('content')
 
     <!-- Jquery Core Js -->
     <script src="{{ asset('site-assets/plugins/jquery/jquery.min.js')}}"></script>
@@ -368,6 +386,9 @@
 
     <!-- Demo Js -->
     <script src="{{ asset('site-assets/js/demo.js')}}"></script>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     @yield('scripts')
 </body>
 
