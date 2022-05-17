@@ -22,7 +22,6 @@ Route::group([], function () {
     Route::post('/payment/jvzoo', 'Subscriptions\JVZooPaymentHandlerController@processPayment');
     Route::post('/payment/warriorplus', 'Subscriptions\WarriorPlusController@processPayment');
     Route::any('/payment/thrivecart', 'Subscriptions\ThriveCartController@processPayment');
-    
 
 });
 

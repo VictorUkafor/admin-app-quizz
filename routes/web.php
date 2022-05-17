@@ -62,7 +62,7 @@ Route::middleware(['auth'])->group(function (){
 		Route::get('/templates', 'TemplateController@get');
 		Route::get('/templates/{uuid}', 'TemplateController@show');
 		Route::put('/templates/{uuid}', 'TemplateController@edit');
-		Route::delete('/templates/{uid}', 'TemplateController@delete');
+		Route::delete('/templates/{uuid}', 'TemplateController@delete');
 
 	});
 

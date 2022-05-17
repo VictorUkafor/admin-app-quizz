@@ -600,12 +600,12 @@
                 </div>
 
                 <div class="right-content">
-
                     <div class="content" :style="{
                         backgroundColor: styles.background.backgroundColor,
                         borderRadius: styles.background.borderRadius 
                         == 'round' ? '10px' : '0',
-                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                        border: styles.background.border ? `${styles.background.borderWidth} 
+                        ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
                     }">
                         <p :style="{
                             color: styles.description.color,
@@ -672,7 +672,6 @@
                         }">00:00:00</div>
 
                     </div>
-
                 </div>      
             </div>
 
@@ -725,231 +724,232 @@
        </div>
 
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" 
-            aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document" style="background:transparent!important;width:30%;margin-left:35%;"> 
-                <div class="modal-content" style="background:transparent!important;">
-                    <div class="right-content" v-if="step == 1" style="width:100%;">
-                        <div class="content"
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" 
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document" 
+            style="background:transparent!important;width:30%;margin-left:35%;"> 
+            <div class="modal-content" style="background:transparent!important;">
+                <div class="right-content" v-if="step == 1" style="width:100%;">
+                    <div class="content"
+                    :style="{
+                        backgroundColor: styles.background.backgroundColor,
+                        borderRadius: styles.background.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                    }">
+                        <p :style="{
+                            color: styles.description.color,
+                        }">You are welcome</p>
+
+                        <div class="showpreimg"
                         :style="{
-                            backgroundColor: styles.background.backgroundColor,
-                            borderRadius: styles.background.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
-                        }">
-                            <p :style="{
-                                color: styles.description.color,
-                            }">You are welcome</p>
+                            backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
+                            borderRadius: styles.media.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        }"></div>
 
-                            <div class="showpreimg"
-                            :style="{
-                                backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
-                                borderRadius: styles.media.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            }"></div>
+                        <button :style="{
+                            backgroundColor: styles.button.backgroundColor,
+                            color: styles.button.color,
+                            borderRadius: styles.button.borderRadius 
+                            == 'round' ? '5px' : '0',
+                            border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
+                        }"
+                        @click="() => step = 2">Click here</button>
 
-                            <button :style="{
-                                backgroundColor: styles.button.backgroundColor,
-                                color: styles.button.color,
-                                borderRadius: styles.button.borderRadius 
-                                == 'round' ? '5px' : '0',
-                                border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
-                            }"
-                            @click="() => step = 2">Click here</button>
-
-                        </div>
-                    </div>                
-
-                    <div class="right-content" v-if="step == 2" style="width:100%;">
-                        <div class="content"
-                        :style="{
-                            backgroundColor: styles.background.backgroundColor,
-                            borderRadius: styles.background.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
-                        }">
-                            <p :style="{
-                                color: styles.description.color,
-                            }">What is your gender?</p>
-
-                            <div class="showpreimg"
-                            :style="{
-                                backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
-                                borderRadius: styles.media.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            }"></div>
-
-                            <button 
-                            :style="{
-                                backgroundColor: styles.question.backgroundColor,
-                                color: styles.question.color,
-                                borderRadius: styles.question.borderRadius 
-                                == 'round' ? '5px!important' : '0!important',
-                                border: styles.question.border ? `${styles.question.borderWidth} ${styles.question.borderStyle} ${styles.question.borderColor}` : 'none',
-                            }"@click="() => step = 3">Male</button>
-                            <button :style="{
-                                backgroundColor: styles.question.backgroundColor,
-                                color: styles.question.color,
-                                borderRadius: styles.question.borderRadius 
-                                == 'round' ? '5px!important' : '0!important',
-                                border: styles.question.border ? `${styles.question.borderWidth} ${styles.question.borderStyle} ${styles.question.borderColor}` : 'none',
-                            }"@click="() => step = 3">Female</button>
-
-                            <button class="skippable"
-                            :style="{
-                                backgroundColor: styles.skip.backgroundColor,
-                                color: styles.skip.color,
-                                borderRadius: styles.skip.borderRadius == 'round' ? '5px' : '0',
-                                border: styles.skip.border ? `${styles.skip.borderWidth} 
-                                ${styles.skip.borderStyle} ${styles.skip.borderColor}` : 'none',
-                            }" @click="() => step = 3">Skip >></button>
-
-                            <div :style="{
-                                width: '100%',
-                                textAlign: 'center',
-                                paddingTop: '1rem',
-                                fontFamily:'Poppins',
-                                color: styles.timer.color,
-                                textAlign: styles.timer.position,
-                            }">00:00:00</div>
-                        </div>
                     </div>
+                </div>                
 
-                    <div class="right-content" v-if="step == 3" style="width:100%;">
-                        <div class="content"
+                <div class="right-content" v-if="step == 2" style="width:100%;">
+                    <div class="content"
+                    :style="{
+                        backgroundColor: styles.background.backgroundColor,
+                        borderRadius: styles.background.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                    }">
+                        <p :style="{
+                            color: styles.description.color,
+                        }">What is your gender?</p>
+
+                        <div class="showpreimg"
                         :style="{
-                            backgroundColor: styles.background.backgroundColor,
-                            borderRadius: styles.background.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
-                        }">
-                            <p :style="{
-                                color: styles.description.color,
-                            }">Hello CTA</p>
+                            backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
+                            borderRadius: styles.media.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        }"></div>
 
-                            <div class="showpreimg"
-                            :style="{
-                                backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
-                                borderRadius: styles.media.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            }"></div>
-                            
-                            <button
-                            :style="{
-                                backgroundColor: styles.button.backgroundColor,
-                                color: styles.button.color,
-                                borderRadius: styles.button.borderRadius 
-                                == 'round' ? '5px' : '0',
-                                border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
-                            }" @click="() => step = 4">Thank you</button>
-                        </div>
-                    </div>
-    
-                    <div class="right-content" v-if="step == 5" style="width:100%;">
-                        <div class="content"
+                        <button 
                         :style="{
-                            backgroundColor: styles.background.backgroundColor,
-                            borderRadius: styles.background.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
-                        }">
-                            <p :style="{
-                                color: styles.description.color,
-                            }">Hello Result</p>
+                            backgroundColor: styles.question.backgroundColor,
+                            color: styles.question.color,
+                            borderRadius: styles.question.borderRadius 
+                            == 'round' ? '5px!important' : '0!important',
+                            border: styles.question.border ? `${styles.question.borderWidth} ${styles.question.borderStyle} ${styles.question.borderColor}` : 'none',
+                        }"@click="() => step = 3">Male</button>
+                        <button :style="{
+                            backgroundColor: styles.question.backgroundColor,
+                            color: styles.question.color,
+                            borderRadius: styles.question.borderRadius 
+                            == 'round' ? '5px!important' : '0!important',
+                            border: styles.question.border ? `${styles.question.borderWidth} ${styles.question.borderStyle} ${styles.question.borderColor}` : 'none',
+                        }"@click="() => step = 3">Female</button>
 
-                            <div class="showpreimg"
-                            :style="{
-                                backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
-                                borderRadius: styles.media.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            }"></div>
-                            
-                            <button
-                            :style="{
-                                backgroundColor: styles.button.backgroundColor,
-                                color: styles.button.color,
-                                borderRadius: styles.button.borderRadius 
-                                == 'round' ? '5px' : '0',
-                                border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
-                            }" @click="() => step = 1">Submit</button>
-                        </div> 
-                    </div>
-
-                    <div class="right-content" v-if="step == 4" style="width:100%;">
-                        <div class="content"
+                        <button class="skippable"
                         :style="{
-                            backgroundColor: styles.background.backgroundColor,
-                            borderRadius: styles.background.borderRadius 
-                            == 'round' ? '10px' : '0',
-                            border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
-                        }">
-                            <p :style="{
-                                color: styles.description.color,
-                            }">Hello Leads</p>
+                            backgroundColor: styles.skip.backgroundColor,
+                            color: styles.skip.color,
+                            borderRadius: styles.skip.borderRadius == 'round' ? '5px' : '0',
+                            border: styles.skip.border ? `${styles.skip.borderWidth} 
+                            ${styles.skip.borderStyle} ${styles.skip.borderColor}` : 'none',
+                        }" @click="() => step = 3">Skip >></button>
 
-                            <div class="showpreimg"
-                            style="background-image: url('https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940');height:15rem;"></div>
-
-                            <input type="text" class="input-field"
-                            :style="{
-                                width: '100%',
-                                height: '2.5rem',
-                                textAlign: 'left',
-                                marginBottom: '1rem',
-                                paddingLeft: '1rem',
-                                backgroundColor: styles.input.backgroundColor,
-                                color: styles.input.color,
-                                borderRadius: styles.input.borderRadius == 'round' ? '5px' : '0',
-                                border: styles.input.border ? `${styles.input.borderWidth} 
-                                ${styles.input.borderStyle} ${styles.input.borderColor}` : 'none',
-                            }"
-                            placeholder="Enter your name"/>
-
-                            <input type="email" class="input-field" 
-                            :style="{
-                                width: '100%',
-                                height: '2.5rem',
-                                textAlign: 'left',
-                                marginBottom: '1rem',
-                                paddingLeft: '1rem',
-                                backgroundColor: styles.input.backgroundColor,
-                                color: styles.input.color,
-                                borderRadius: styles.input.borderRadius == 'round' ? '5px' : '0',
-                                border: styles.input.border ? `${styles.input.borderWidth} 
-                                ${styles.input.borderStyle} ${styles.input.borderColor}` : 'none',
-                            }"
-                            placeholder="Enter your email"/>
-
-                            <input type="text" class="input-field"
-                            :style="{
-                                width: '100%',
-                                height: '2.5rem',
-                                textAlign: 'left',
-                                marginBottom: '1rem',
-                                paddingLeft: '1rem',
-                                backgroundColor: styles.input.backgroundColor,
-                                color: styles.input.color,
-                                borderRadius: styles.input.borderRadius == 'round' ? '5px' : '0',
-                                border: styles.input.border ? `${styles.input.borderWidth} 
-                                ${styles.input.borderStyle} ${styles.input.borderColor}` : 'none',
-                            }"
-                            placeholder="Enter your mobile"/>
-                            
-                            <button style="margin-top:0"
-                            :style="{
-                                backgroundColor: styles.button.backgroundColor,
-                                color: styles.button.color,
-                                borderRadius: styles.button.borderRadius 
-                                == 'round' ? '5px' : '0',
-                                border: styles.button.border ? `${styles.button.borderWidth} 
-                                ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
-                            }" @click="() => step = 5">Submit</button>
-
-                        </div>                  
+                        <div :style="{
+                            width: '100%',
+                            textAlign: 'center',
+                            paddingTop: '1rem',
+                            fontFamily:'Poppins',
+                            color: styles.timer.color,
+                            textAlign: styles.timer.position,
+                        }">00:00:00</div>
                     </div>
                 </div>
+
+                <div class="right-content" v-if="step == 3" style="width:100%;">
+                    <div class="content"
+                    :style="{
+                        backgroundColor: styles.background.backgroundColor,
+                        borderRadius: styles.background.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                    }">
+                        <p :style="{
+                            color: styles.description.color,
+                        }">Hello CTA</p>
+
+                        <div class="showpreimg"
+                        :style="{
+                            backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
+                            borderRadius: styles.media.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        }"></div>
+                        
+                        <button
+                        :style="{
+                            backgroundColor: styles.button.backgroundColor,
+                            color: styles.button.color,
+                            borderRadius: styles.button.borderRadius 
+                            == 'round' ? '5px' : '0',
+                            border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
+                        }" @click="() => step = 4">Thank you</button>
+                    </div>
+                </div>
+
+                <div class="right-content" v-if="step == 5" style="width:100%;">
+                    <div class="content"
+                    :style="{
+                        backgroundColor: styles.background.backgroundColor,
+                        borderRadius: styles.background.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                    }">
+                        <p :style="{
+                            color: styles.description.color,
+                        }">Hello Result</p>
+
+                        <div class="showpreimg"
+                        :style="{
+                            backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
+                            borderRadius: styles.media.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        }"></div>
+                        
+                        <button
+                        :style="{
+                            backgroundColor: styles.button.backgroundColor,
+                            color: styles.button.color,
+                            borderRadius: styles.button.borderRadius 
+                            == 'round' ? '5px' : '0',
+                            border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
+                        }" @click="() => step = 1">Submit</button>
+                    </div> 
+                </div>
+
+                <div class="right-content" v-if="step == 4" style="width:100%;">
+                    <div class="content"
+                    :style="{
+                        backgroundColor: styles.background.backgroundColor,
+                        borderRadius: styles.background.borderRadius 
+                        == 'round' ? '10px' : '0',
+                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                    }">
+                        <p :style="{
+                            color: styles.description.color,
+                        }">Hello Leads</p>
+
+                        <div class="showpreimg"
+                        style="background-image: url('https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940');height:15rem;"></div>
+
+                        <input type="text" class="input-field"
+                        :style="{
+                            width: '100%',
+                            height: '2.5rem',
+                            textAlign: 'left',
+                            marginBottom: '1rem',
+                            paddingLeft: '1rem',
+                            backgroundColor: styles.input.backgroundColor,
+                            color: styles.input.color,
+                            borderRadius: styles.input.borderRadius == 'round' ? '5px' : '0',
+                            border: styles.input.border ? `${styles.input.borderWidth} 
+                            ${styles.input.borderStyle} ${styles.input.borderColor}` : 'none',
+                        }"
+                        placeholder="Enter your name"/>
+
+                        <input type="email" class="input-field" 
+                        :style="{
+                            width: '100%',
+                            height: '2.5rem',
+                            textAlign: 'left',
+                            marginBottom: '1rem',
+                            paddingLeft: '1rem',
+                            backgroundColor: styles.input.backgroundColor,
+                            color: styles.input.color,
+                            borderRadius: styles.input.borderRadius == 'round' ? '5px' : '0',
+                            border: styles.input.border ? `${styles.input.borderWidth} 
+                            ${styles.input.borderStyle} ${styles.input.borderColor}` : 'none',
+                        }"
+                        placeholder="Enter your email"/>
+
+                        <input type="text" class="input-field"
+                        :style="{
+                            width: '100%',
+                            height: '2.5rem',
+                            textAlign: 'left',
+                            marginBottom: '1rem',
+                            paddingLeft: '1rem',
+                            backgroundColor: styles.input.backgroundColor,
+                            color: styles.input.color,
+                            borderRadius: styles.input.borderRadius == 'round' ? '5px' : '0',
+                            border: styles.input.border ? `${styles.input.borderWidth} 
+                            ${styles.input.borderStyle} ${styles.input.borderColor}` : 'none',
+                        }"
+                        placeholder="Enter your mobile"/>
+                        
+                        <button style="margin-top:0"
+                        :style="{
+                            backgroundColor: styles.button.backgroundColor,
+                            color: styles.button.color,
+                            borderRadius: styles.button.borderRadius 
+                            == 'round' ? '5px' : '0',
+                            border: styles.button.border ? `${styles.button.borderWidth} 
+                            ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
+                        }" @click="() => step = 5">Submit</button>
+
+                    </div>                  
                 </div>
             </div>
+            </div>
+        </div>
 
         </div>
 
@@ -1044,10 +1044,10 @@
             selectTheme(index){
                 this.edit = true;
                 const theme = this.themes.data.find((each, i) => i == index);
-                // this.styles = JSON.parse(theme.json);
-                this.styles = JSON.parse(JSON.parse(theme.json));
 
+                this.styles = JSON.parse(JSON.parse(theme.json));
                 this.name = theme.name;
+                this.uuid = theme.uuid;
 
                 console.log('theme.....', JSON.parse(JSON.parse(theme.json)), styles);
             },
@@ -1070,7 +1070,11 @@
                 this.loading = true;
 
                 axios
-                .delete(`/api/templates/${uuid}`)
+                .delete(`/api/templates/${uuid}`, { 
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') 
+                }
+            })
                 .then((response) => {
                     this.fetchThemes();
                     this.loading = false;
@@ -1091,7 +1095,11 @@
                 .post(`/api/templates`, {
                     name: this.name,
                     json: JSON.stringify(this.styles)
-                })
+                }, { 
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') 
+                }
+            })
                 .then((response) => {
                     this.fetchThemes();
                     this.loading = false;
@@ -1112,6 +1120,10 @@
                 .put(`/api/templates/${this.uuid}`, {
                     name: this.name,
                     json: JSON.stringify(this.styles)
+                }, { 
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') 
+                }
                 })
                 .then((response) => {
                     this.fetchThemes();
