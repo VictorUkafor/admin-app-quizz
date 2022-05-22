@@ -10,12 +10,6 @@
 
                 <div class="theme-settings">
 
-                    <div class="each-line-settings">
-                        <input type="text" placeholder="Enter theme name" 
-                        style="width:100%;padding: 1rem;border-radius: 5px;
-                        border:none;font-family:'Poppins'" v-model="name"/>
-                    </div>
-
                     <div class="each-grp">
                        <div class="each-header">
                            <div class="p">Background Settings</div>
@@ -586,15 +580,25 @@
 
                    </div>
 
+                   <div class="each-line-settings">
+                        <input type="text" placeholder="Enter theme name" 
+                        style="width:100%;padding: 1rem;border-radius: 5px;
+                        border:none;font-family:'Poppins';margin-bottom:2rem;" v-model="name"/>
+                    </div>
+
+                    <div class="alert alert-danger" role="alert" v-if="error">
+                        Theme Name is required
+                    </div>
+
                     <div style="display:flex;justify-content:space-between;margin-top:3rem;">
                         <button style="width:48%;" type="button" class="btn btn-primary"
                             data-toggle="modal" data-target="#exampleModal">Preview</button>
 
                         <button style="width:48%;" type="button" class="btn btn-success" v-if="!edit"
-                        @click="saveTheme" :disabled="!name.trim()">Save</button>
+                        @click="saveTheme">Save</button>
 
                         <button style="width:48%;" type="button" class="btn btn-success" v-if="edit"
-                        @click="updateTheme" :disabled="!name.trim()">Update</button>
+                        @click="updateTheme">Update</button>
                     </div>
 
                 </div>
@@ -735,7 +739,8 @@
                         backgroundColor: styles.background.backgroundColor,
                         borderRadius: styles.background.borderRadius 
                         == 'round' ? '10px' : '0',
-                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                        border: styles.background.border ? `${styles.background.borderWidth} 
+                        ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
                     }">
                         <p :style="{
                             color: styles.description.color,
@@ -753,7 +758,8 @@
                             color: styles.button.color,
                             borderRadius: styles.button.borderRadius 
                             == 'round' ? '5px' : '0',
-                            border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
+                            border: styles.button.border ? `${styles.button.borderWidth} 
+                            ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
                         }"
                         @click="() => step = 2">Click here</button>
 
@@ -775,8 +781,7 @@
                         <div class="showpreimg"
                         :style="{
                             backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
-                            borderRadius: styles.media.borderRadius 
-                        == 'round' ? '10px' : '0',
+                            borderRadius: styles.media.borderRadius == 'round' ? '10px' : '0',
                         }"></div>
 
                         <button 
@@ -786,14 +791,15 @@
                             borderRadius: styles.question.borderRadius 
                             == 'round' ? '5px!important' : '0!important',
                             border: styles.question.border ? `${styles.question.borderWidth} ${styles.question.borderStyle} ${styles.question.borderColor}` : 'none',
-                        }"@click="() => step = 3">Male</button>
+                        }" @click="() => step = 3">Male</button>
+
                         <button :style="{
                             backgroundColor: styles.question.backgroundColor,
                             color: styles.question.color,
                             borderRadius: styles.question.borderRadius 
                             == 'round' ? '5px!important' : '0!important',
                             border: styles.question.border ? `${styles.question.borderWidth} ${styles.question.borderStyle} ${styles.question.borderColor}` : 'none',
-                        }"@click="() => step = 3">Female</button>
+                        }" @click="() => step = 3">Female</button>
 
                         <button class="skippable"
                         :style="{
@@ -860,8 +866,7 @@
                         <div class="showpreimg"
                         :style="{
                             backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
-                            borderRadius: styles.media.borderRadius 
-                        == 'round' ? '10px' : '0',
+                            borderRadius: styles.media.borderRadius == 'round' ? '10px' : '0',
                         }"></div>
                         
                         <button
@@ -870,7 +875,8 @@
                             color: styles.button.color,
                             borderRadius: styles.button.borderRadius 
                             == 'round' ? '5px' : '0',
-                            border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} ${styles.button.borderColor}` : 'none',
+                            border: styles.button.border ? `${styles.button.borderWidth} ${styles.button.borderStyle} 
+                            ${styles.button.borderColor}` : 'none',
                         }" @click="() => step = 1">Submit</button>
                     </div> 
                 </div>
@@ -881,14 +887,19 @@
                         backgroundColor: styles.background.backgroundColor,
                         borderRadius: styles.background.borderRadius 
                         == 'round' ? '10px' : '0',
-                        border: styles.background.border ? `${styles.background.borderWidth} ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
+                        border: styles.background.border ? `${styles.background.borderWidth} 
+                        ${styles.background.borderStyle} ${styles.background.borderColor}` : 'none',
                     }">
                         <p :style="{
                             color: styles.description.color,
                         }">Hello Leads</p>
 
                         <div class="showpreimg"
-                        style="background-image: url('https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940');height:15rem;"></div>
+                        :style="{
+                            backgroundImage: 'url('+'https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&h=650&w=940'+')',
+                            height: '15rem', 
+                            borderRadius: styles.media.borderRadius == 'round' ? '10px' : '0',
+                        }"></div>
 
                         <input type="text" class="input-field"
                         :style="{
@@ -1039,6 +1050,7 @@
             page: 1,
             edit: false,
             uuid: '',
+            error: false,
         },
         methods: {
             selectTheme(index){
@@ -1091,6 +1103,13 @@
             saveTheme(){
                 this.loading = true;
 
+                if(!this.name.trim()){
+                    this.error = true;
+                    return 
+                }
+
+                this.error = false;
+
                 axios
                 .post(`/api/templates`, {
                     name: this.name,
@@ -1115,6 +1134,13 @@
             },
             updateTheme(){
                 this.loading = true;
+
+                if(!this.name.trim()){
+                    this.error = true;
+                    return 
+                }
+
+                this.error = false;
 
                 axios
                 .put(`/api/templates/${this.uuid}`, {
