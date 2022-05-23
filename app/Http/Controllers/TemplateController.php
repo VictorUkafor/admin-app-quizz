@@ -103,7 +103,7 @@ class TemplateController extends Controller
     public function get(Request $request){
         try {
                         
-            $templates = Template::orderBy('id', 'desc')->paginate(20);   
+            $templates = Template::orderBy('id', 'desc')->paginate(11);   
             
             return response()->json([
                 'templates' => $templates,
