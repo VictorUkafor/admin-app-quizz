@@ -21,7 +21,7 @@ class UserController extends Controller
     public function subscriptions(){
         try{
             $packages = SubscriptionPackageModel::all();
-            $user = User::where('id', Auth::id())->first();
+            $user = User::where('user_id', Auth::id())->first();
             if($user){
 
                 $userSub = $user->subscription;
@@ -103,7 +103,7 @@ class UserController extends Controller
                     ->withErrors($validator)
                     ->withInput();
             }
-            $user = User::where('id', $request->user_id)->first();
+            $user = User::where('user_id', $request->user_id)->first();
             if($user){
                 $user->password = bcrypt($request->password);
                 $user->save();
@@ -139,7 +139,7 @@ class UserController extends Controller
                     ->withInput();
             }
 
-            $user = User::where('id', $request->user_id)->first();
+            $user = User::where('user_id', $request->user_id)->first();
             if($user){
                 $user->name = $request->name;
                 $user->email = $request->email;

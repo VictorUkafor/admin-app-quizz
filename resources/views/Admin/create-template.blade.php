@@ -1179,7 +1179,6 @@
         mounted() {
             this.fetchThemes();
         },
-
     })
 </script>
 

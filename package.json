@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "@tinymce/tinymce-vue": "^3.2.8",
+        "autoprefixer": "10.4.5",
         "chart.js": "^2.9.4",
         "qrcode": "^1.5.0",
         "vue-chartjs": "^3.5.1",

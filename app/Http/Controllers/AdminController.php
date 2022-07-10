@@ -22,14 +22,14 @@ class AdminController extends Controller
 
     public function __construct()
     {
-        $this->middleware('admin');
+       $this->middleware('admin');
 
     }
 
     public function index(Request $request){
-        
         try{
-
+            
+            
             $users = User::take(5);
 
             $sumOfUsers = count(User::all());
@@ -80,7 +80,7 @@ class AdminController extends Controller
     public function subscriptions($userId){
         try{
             $packages = SubscriptionPackageModel::all();
-            $user = User::where('id', $userId)->first();
+            $user = User::where('user_id', $userId)->first();
             if($user){
 
                 $userSub = $user->subscription;
@@ -153,7 +153,7 @@ class AdminController extends Controller
             }
 
             $package = SubscriptionPackageModel::where('id', $request->subscription_package)->first();
-            $user = User::where('id', $request->user_id)->first();
+            $user = User::where('user_id', $request->user_id)->first();
             if($package && $user){
 
 
@@ -187,7 +187,7 @@ class AdminController extends Controller
         }
 
         try{
-            $user = User::where('id', $userId)->first();
+            $user = User::where('user_id', $userId)->first();
             if($user){
                 $feedback = $this->cancelSubscription($user,$queryId);
                 if ($feedback) {
@@ -257,7 +257,7 @@ class AdminController extends Controller
                     ->withInput();
             }
 
-            $user = User::where('id', $request->user_id)->first();
+            $user = User::where('user_id', $request->user_id)->first();
             if($user){
                 $user->name = $request->name;
                 $user->email = $request->email;
@@ -289,7 +289,7 @@ class AdminController extends Controller
         }
 
         try{
-            $user = User::where('id', $userId)->first();
+            $user = User::where('user_id', $userId)->first();
             if($user){
                 $user->delete();
                 $message = "User Deleted.";
@@ -311,7 +311,7 @@ class AdminController extends Controller
                     ->withErrors($validator)
                     ->withInput();
             }
-            $user = User::where('id', $request->user_id)->first();
+            $user = User::where('user_id', $request->user_id)->first();
             if($user){
                 $user->password = bcrypt($request->password);
                 $user->save();
@@ -649,7 +649,7 @@ class AdminController extends Controller
                     ->withInput();
             }
 
-            $user = User::where('id', $request->user_id)->first();
+            $user = User::where('user_id', $request->user_id)->first();
             if($user){
                 $user->name = $request->name;
                 $user->email = $request->email;

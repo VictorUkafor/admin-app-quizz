@@ -120,28 +120,20 @@ class TemplateController extends Controller
 
 
     public function show($uuid){
-        try {
+        $template = Template::where('uuid', $uuid)->first();
 
-            $template = Template::where('uuid', $uuid)->first();
-
-            if(!$template){
-                return response()->json([
-                    'message' => "Template could not be found",
-                    'status' => false,
-                ], 404);
-            }
-            
+        if(!$template){
             return response()->json([
-                'template' => $template,
-                'status' => true,
-            ], 200);
-
-        }catch(Exception $e){
-            return response()->json([
-                'message' => $e->message(),
+                'message' => "Template could not be found",
                 'status' => false,
-            ], 500);
+            ], 404);
         }
+        
+        return response()->json([
+            'template' => $template,
+            'status' => true,
+        ], 200);
+
     }
 
 

@@ -48,7 +48,7 @@
                                                         data-user="{{ $user }}"
                                                     >Edit</button>
                                                     <a
-                                                        href="{{ route('admin.users.subscriptions', $user->id) }}"
+                                                        href="{{ route('admin.users.subscriptions', $user->user_id) }}"
                                                         class="btn btn-primary edit-access"
                                                     >Subscription</a>
                                                     <button
@@ -281,7 +281,7 @@
     $(".edit-user").on('click', function(){
         let user = $(this).data('user');
         $("#name").val(user.name);
-        $("#user_id").val(user.id);
+        $("#user_id").val(user.user_id);
         $("#email").val(user.email);
         $("#user_type").val(user.user_type);
         $("#mobile").val(user.mobile);
@@ -302,14 +302,14 @@
 
     $(".edit-password").on('click', function(){
         let user = $(this).data('user');
-        $("#pass_user_id").val(user.id);
+        $("#pass_user_id").val(user.user_id);
     });
 
     $(".delete-user").on('click', function(){
         let user = $(this).data('user');
         var r = confirm('Are you sure? This action is irreversable. Click Ok to proceed.');
         if (r) {
-            window.location.href = "{{ url('/admin/users/delete') }}/"+user.id;
+            window.location.href = "{{ url('/admin/users/delete') }}/"+user.user_id;
         }
     });
 </script>

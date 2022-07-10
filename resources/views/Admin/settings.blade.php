@@ -31,7 +31,7 @@
                                                     <label>Full Name</label>
                                                     <input
                                                         type="hidden" class="form-control"
-                                                        name="user_id" id="user_id" value="{{ Auth::id() }}"/>
+                                                        name="user_id" id="user_id" value="{{ Auth::user()->user_id }}"/>
                                                     <div class="form-line">
                                                         <input type="text" class="form-control"
                                                             name="name" id="name"
@@ -78,7 +78,7 @@
                                             <div class="card-body">
                                                 <div class="form-group">
                                                     <label>Password</label>
-                                                    <input type="hidden" class="form-control" name="user_id" value="{{ Auth::id() }}"/>
+                                                    <input type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->user_id }}"/>
                                                     <div class="form-line">
                                                         <input type="password" class="form-control" name="password" placeholder="Enter User Password" required/>
                                                     </div>

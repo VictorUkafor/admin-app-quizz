@@ -15,6 +15,7 @@ class AdminCheck
      */
     public function handle($request, Closure $next)
     {
+
         if (Auth::check()) {
             $user = Auth::user();
 
@@ -23,6 +24,7 @@ class AdminCheck
                 Auth::logout();
                 return redirect()->route('login');
             }
+
 
         }else{
             return redirect()->route('login');

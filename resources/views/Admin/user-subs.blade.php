@@ -93,7 +93,7 @@
                                 @endforeach
 
                             </select>
-                            <input type="hidden" name="user_id" value="{{ $user->id }}" />
+                            <input type="hidden" name="user_id" value="{{ $user->user_id }}" />
                         </div>
 
                         <div class="form-group">
@@ -158,7 +158,7 @@
                                     <input type="text" class="form-control" id="end" name="end_date" data-date-format="dd-mm-yyyy" value="{{ date('d-m-Y') }}" placeholder="Date end...">
                                 </div>
                             </div>
-                            <input type="hidden" name="user_id" value="{{ $user->id }}" />
+                            <input type="hidden" name="user_id" value="{{ $user->user_id }}" />
                             <input type="hidden" name="subscription_package" id="package_id" />
 
                         </div>

@@ -65,12 +65,14 @@ class LoginController extends Controller
             //Cache::store('memcached')->put('user', Auth::user(), 60 * 60 * 2);
 
             if(Auth::user()->user_type == 'admin'){
-                return redirect()->route('admin.dashboard');
+               return redirect()->route('admin.dashboard');
+
             }else{
                 Auth::logout();
                 Session::put('errorMessage', 'You are not authorized proceed.');
                 return redirect('/login');
             }
+
 
         }else{
             Session::put('errorMessage', 'Wrong email or password');

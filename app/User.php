@@ -51,7 +51,7 @@ class User extends Authenticatable implements JWTSubject
 
     public function subscription()
     {
-        return $this->hasOne('App\Models\Subscription');
+        return $this->hasOne('App\Models\Subscription', 'user_id', 'user_id');
     }
 
 
